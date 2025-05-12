@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-draw-x: drawX 150ms ease-in forwards 1;
+  --animate-shine: shine 150ms infinite;
+  @keyframes drawX {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }
+}
