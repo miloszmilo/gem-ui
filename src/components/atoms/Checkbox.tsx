@@ -9,10 +9,10 @@ export default function Checkbox() {
       className="flex flex-row justify-items-center items-center gap-2 [-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,0.6) 30%, #000 50%, rgba(0,0,0,0.6) 70%);-webkit-mask-size: 200%;] animate-shine"
     >
       <motion.div
-        className={`p-4 rounded-md border-2 border-black aspect-square
+        className={`p-4 rounded-md border-2 border-black dark:border-white aspect-square
 min-h-fit cursor-pointer relative`}
         onClick={() => setIsChecked((cur) => !cur)}
-      whileTap={{ scale: 0.95, rotate: 90 }}
+        whileTap={{ scale: 0.85, rotate: 90 }}
       >
         <Xsvg isChecked={isChecked} />
       </motion.div>

@@ -11,16 +11,18 @@ export default function Toggle() {
         OFF
       </span>
       <motion.div
-        className={`flex flex-row w-48 h-12 bg-black rounded-full px-2 py-1 cursor-pointer`}
+        className={`inset-0 flex flex-row w-48 h-12 bg-neutral-300 rounded-full
+cursor-pointer relative`}
         style={{ justifyContent: isToggled ? 'flex-end' : 'flex-start' }}
         onClick={toggle}
       >
         <motion.div
           layout
-          className={`${isToggled ? 'bg-green-500' : 'bg-red-500'} rounded-full h-full
-aspect-square`}
-          transition={{ duration: 0.15, stiffness: 1000 }}
-          whileTap={{ scale: 0.95 }}
+          className={` bg-white rounded-full h-full
+aspect-square shadow-black shadow-md`}
+          transition={{ type: "spring", duration: 0.15, damping: 20, stiffness: 200 }}
+          whileTap={{ scale: 0.85 }}
+          whileHover={{ scale: 1.05 }}
         >
         </motion.div>
       </motion.div>
