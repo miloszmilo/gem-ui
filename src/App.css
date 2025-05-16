@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --animate-draw-x: drawX 150ms ease-in forwards 1;
+  --animate-draw-x-left: drawX 200ms ease-in forwards 1;
+  --animate-draw-x-right: drawX 200ms ease-in forwards 1 100ms;
   --animate-shine: shine 150ms infinite;
   @keyframes drawX {
     to {

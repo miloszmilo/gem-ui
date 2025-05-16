@@ -1,5 +1,6 @@
 import './App.css'
 import Checkbox from './components/atoms/Checkbox'
+import Toggle from './components/atoms/Toggle'
 
 export default function App() {
 
@@ -11,6 +12,7 @@ export default function App() {
         items-center'>
         <h1 className="sans text-4xl font-bold">Gem UI</h1>
         <Checkbox />
+        <Toggle/>
       </main>
       <footer>
       </footer>
