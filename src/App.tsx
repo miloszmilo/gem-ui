@@ -1,8 +1,9 @@
 import './App.css'
-import Checkbox from './components/atoms/Checkbox'
 import MinMaxSlider from './components/atoms/MinMaxSlider'
+import Select from './components/atoms/Select'
 import Slider from './components/atoms/Slider'
 import Toggle from './components/atoms/Toggle'
+import Checkbox from './components/molecules/Checkbox'
 
 export default function App() {
 
@@ -16,7 +17,8 @@ export default function App() {
         <Checkbox />
         <Toggle />
         <MinMaxSlider />
-        <Slider/>
+        <Slider min={1} max={100} step={1} />
+        <Select />
       </main>
       <footer>
       </footer>

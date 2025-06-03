@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Xsvg from "./Xsvg";
 import { motion } from "motion/react";
+import Xsvg from "../atoms/Xsvg";
 
 export default function Checkbox() {
   const [isChecked, setIsChecked] = useState<boolean>(false);

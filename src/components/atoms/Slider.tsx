@@ -25,19 +25,22 @@ export default function Slider({ min = 1, max = 100, step = 1 }: Props) {
     if (!isDragging) return;
     const { left, width } = event.currentTarget.getBoundingClientRect();
     const percentage = (event.clientX - left) / width;
-    const newValue = Math.round(min + percentage * (max - min));
+    const newValue = Math.round(min + percentage * (max - min) / step) * step;
     setValue(newValue);
   }
   return (
-    <div className="bg-black w-48 h-8 rounded-full flex items-center">
+    <div
+      className="bg-black w-48 h-8 rounded-full flex items-center"
+    >
       <motion.div
         transition={{ type: "spring", duration: 0.15 }}
-        className={`relative bg-red-500 rounded-full h-full aspect-square
+        className={`bg-red-500 rounded-full h-full aspect-square
           ${isDragging ? 'cursor-grabbing' : 'cursor-pointer'}`}
-        style={{ width: `${getPercentage()}%` }}
+        style={{ marginLeft: `${getPercentage()}px` }}
         onMouseDown={handleDragStart}
         onMouseUp={handleDragEnd}
         onMouseMove={handleDrag}
+        onMouseOut={handleDragEnd}
       >
       </motion.div>
     </div>
