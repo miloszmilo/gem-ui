@@ -4,6 +4,7 @@ import { useState, type MouseEvent } from "react"
 type Props = {
   defaultItem: string
   items: Item[]
+  onSelect: (index: number, item: Item) => void
 }
 
 type Item = {
@@ -11,13 +12,15 @@ type Item = {
   value: any
 }
 
-export default function Select({ defaultItem = "default", items = [{ text: "one", value: 1 }, { text: "two", value: 2 }] }: Props) {
+export default function Select({ defaultItem = "default", items = [{ text: "one", value: 1 }, { text: "two", value: 2 }], onSelect }: Props) {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [selectedItemIndex, setSelectedItemIndex] = useState<number>(-1);
+
   function handleSelect(event: MouseEvent<HTMLLIElement>) {
     const index = items.findIndex((item) => item.text === event.currentTarget.textContent);
     setSelectedItemIndex(index);
     setIsOpened(false);
+    onSelect(index, items[index]);
   }
   return (
     <div>
