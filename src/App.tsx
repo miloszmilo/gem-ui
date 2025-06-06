@@ -1,4 +1,5 @@
 import './App.css'
+import Carousel from './components/atoms/Carousel'
 import MinMaxSlider from './components/atoms/MinMaxSlider'
 import Select from './components/atoms/Select'
 import Slider from './components/atoms/Slider'
@@ -19,6 +20,7 @@ export default function App() {
         <MinMaxSlider />
         <Slider min={1} max={100} step={1} />
         <Select />
+        <Carousel />
       </main>
       <footer>
       </footer>

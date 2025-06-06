@@ -12,7 +12,6 @@ export default function Slider({ min = 1, max = 100, step = 1 }: Props) {
   const [isDragging, setIsDragging] = useState<boolean>(false);
 
   function getPercentage() {
-    console.log("Percentage", value)
     return Math.max(Math.min(((value - min) / (max - min)) * 100, max), min);
   }
   function handleDragStart() {
