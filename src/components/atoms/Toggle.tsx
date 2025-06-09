@@ -1,20 +1,21 @@
 import { useState } from "react"
 import { motion } from "motion/react";
 
-export default function Toggle() {
-  const [isToggled, setIsToggled] = useState<boolean>(false);
+export default function Toggle({ defaultState = false, offText = "Off", onText = "On" }: { defaultState: boolean, offText?: string, onText?: string }) {
+  const [isToggled, setIsToggled] = useState<boolean>(defaultState);
   const toggle = () => setIsToggled(!isToggled)
 
   return (
-    <button className="flex flex-row items-center gap-2">
-      <span className={`${isToggled ? 'opacity-50' : 'opacity-100'}`}>
-        OFF
+    <div className="flex flex-row items-center gap-2">
+      <span className={`${isToggled ? '' : 'text-shadow-neutral-500 text-shadow-sm'}`}>
+        {offText}
       </span>
-      <motion.div
+      <motion.button
         className={`inset-0 flex flex-row w-48 h-12 bg-neutral-300 rounded-full
 cursor-pointer relative`}
         style={{ justifyContent: isToggled ? 'flex-end' : 'flex-start' }}
         onClick={toggle}
+        aria-label="Togglable button"
       >
         <motion.div
           layout
@@ -25,11 +26,11 @@ aspect-square shadow-black shadow-md`}
           whileHover={{ scale: 1.05 }}
         >
         </motion.div>
-      </motion.div>
-      <span className={`${isToggled ? 'opacity-100' : 'opacity-50'}`}>
-        ON
+      </motion.button>
+      <span className={`${isToggled ? 'text-shadow-neutral-500 text-shadow-sm' : ''}`}>
+        {onText}
       </span>
-    </button>
+    </div>
   )
 }
 

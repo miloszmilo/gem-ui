@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [items, setItems] = useState<string[]>(["../../../public/images/alexander-mass-0xugG5t9dsc-unsplash.jpg", "../../../public/images/richard-stachmann-wUKrO7kLWeU-unsplash.jpg", "../../../public/images/toa-heftiba-JTWOWjraDUE-unsplash.jpg"]);
+  const [items, setItems] = useState<string[]>(["/images/alexander-mass-0xugG5t9dsc-unsplash.jpg", "/images/richard-stachmann-wUKrO7kLWeU-unsplash.jpg", "../../../public/images/toa-heftiba-JTWOWjraDUE-unsplash.jpg"]);
   const autoNextItemTime = 5000; // ms
   const [progressBar, setProgressBar] = useState<number>(0);
 
