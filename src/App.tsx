@@ -20,7 +20,7 @@ export default function App() {
         <MinMaxSlider />
         <Slider min={1} max={100} step={1} />
         <Select />
-        <Carousel />
+        <Carousel defaultItems={["/images/alexander-mass-0xugG5t9dsc-unsplash.jpg", "/images/richard-stachmann-wUKrO7kLWeU-unsplash.jpg", "../../../public/images/toa-heftiba-JTWOWjraDUE-unsplash.jpg"]} />
       </main>
       <footer>
       </footer>
