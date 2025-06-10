@@ -25,7 +25,7 @@ export default function Select({ defaultItem = "default", items = [{ text: "one"
   return (
     <div className="relative inline-block">
       <motion.button
-        className={`relative z-10 bg-black dark:bg-white dark:text-black rounded-xl
+        className={`relative z-20 bg-black dark:bg-white dark:text-black rounded-xl
         px-4 flex flex-row cursor-pointer gap-2`}
         onClick={() => setIsOpened((cur) => !cur)}
       >
@@ -43,8 +43,8 @@ motion-safe:duration-100`}>
       <AnimatePresence initial={false}>
         {isOpened && <motion.ul
           key="dropdown"
-          className={`relative bg-black dark:bg-white dark:text-black rounded-b-xl
-z-0 mt-[-.5lh] max-h-[7lh]`}
+          className={`absolute bg-black dark:bg-white dark:text-black rounded-b-xl
+mt-[-.5lh] max-h-[7lh] z-10 w-full shadow-lg shadow-black`}
           initial={{ height: 0, overflow: "hidden" }}
           animate={{ height: "auto", overflow: "scroll" }}
           exit={{ height: 0, overflow: "hidden" }}
