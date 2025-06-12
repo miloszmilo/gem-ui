@@ -15,3 +15,9 @@ export const Default: Story = {
     defaultItems: ["../../../public/images/alexander-mass-0x8gG5t9dsc-unsplash.jpg", "../../../public/images/richard-stachmann-wUKrO7kLWe-U-unsplash.jpg"]
   }
 };
+
+export const Empty: Story = {
+  args: {
+    defaultItems: []
+  }
+};
