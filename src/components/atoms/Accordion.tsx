@@ -4,15 +4,20 @@ import { motion } from "motion/react";
 
 type Props = {
   defaultState?: boolean;
+  heading?: string;
   children: React.ReactNode;
 };
 
-export default function Accordion({ defaultState = false, children }: Props) {
+export default function Accordion({
+  defaultState = false,
+  heading = "",
+  children,
+}: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(defaultState);
   return (
     <div className="flex flex-col w-[40ch] rounded-md bg-neutral-800">
       <div className="flex flex-row gap-2 p-2 border-b-neutral-900 border-b-1">
-        <span className="w-full text-xl">Heading</span>
+        <span className="w-full text-xl">{heading}</span>
         <button
           className={`cursor-pointer ${isOpen ? "rotate-90" : ""} duration-100`}
           onClick={() => setIsOpen(!isOpen)}
