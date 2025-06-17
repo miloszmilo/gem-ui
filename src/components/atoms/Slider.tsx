@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import { useState, type MouseEvent } from "react";
 
 type Props = {
-  min: number
-  max: number
-  step: number
-}
+  min: number;
+  max: number;
+  step: number;
+};
 
 export default function Slider({ min = 1, max = 100, step = 1 }: Props) {
   const [value, setValue] = useState<number>((max - min) / 2);
@@ -24,25 +24,21 @@ export default function Slider({ min = 1, max = 100, step = 1 }: Props) {
     if (!isDragging) return;
     const { left, width } = event.currentTarget.getBoundingClientRect();
     const percentage = (event.clientX - left) / width;
-    const newValue = Math.round(min + percentage * (max - min) / step) * step;
+    const newValue = Math.round(min + (percentage * (max - min)) / step) * step;
     setValue(newValue);
   }
   return (
-    <div
-      className="bg-black w-48 h-8 rounded-full flex items-center"
-    >
+    <div className="bg-black w-48 h-8 rounded-full flex items-center">
       <motion.div
         transition={{ type: "spring", duration: 0.15 }}
         className={`bg-red-500 rounded-full h-full aspect-square
-          ${isDragging ? 'cursor-grabbing' : 'cursor-pointer'}`}
+          ${isDragging ? "cursor-grabbing" : "cursor-pointer"}`}
         style={{ marginLeft: `${getPercentage()}px` }}
         onMouseDown={handleDragStart}
         onMouseUp={handleDragEnd}
         onMouseMove={handleDrag}
         onMouseOut={handleDragEnd}
-      >
-      </motion.div>
+      ></motion.div>
     </div>
-  )
+  );
 }
-

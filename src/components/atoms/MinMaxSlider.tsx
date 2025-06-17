@@ -9,15 +9,12 @@ export default function MinMaxSlider() {
         transition={{ type: "spring", duration: 0.15 }}
         className={`bg-red-500 rounded-full h-full aspect-square
 relative left-0`}
-      >
-      </motion.div>
+      ></motion.div>
       <motion.div
         transition={{ type: "spring", duration: 0.15 }}
         className={`bg-blue-500 rounded-full h-full aspect-square
 relative right-0`}
-      >
-      </motion.div>
+      ></motion.div>
     </div>
-  )
+  );
 }
-

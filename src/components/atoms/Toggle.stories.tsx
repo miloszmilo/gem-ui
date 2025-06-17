@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import Toggle from './Toggle';
+import Toggle from "./Toggle";
 
 const meta = {
   component: Toggle,
@@ -12,24 +12,24 @@ type Story = StoryObj<typeof meta>;
 
 export const On: Story = {
   args: {
-    defaultState: true
-  }
+    defaultState: true,
+  },
 };
 export const Off: Story = {
   args: {
-    defaultState: false
-  }
+    defaultState: false,
+  },
 };
 export const TextOn: Story = {
   args: {
     defaultState: true,
-    onText: "Very on"
-  }
+    onText: "Very on",
+  },
 };
 
 export const TextOff: Story = {
   args: {
     defaultState: false,
-    offText: "Not ON"
-  }
+    offText: "Not ON",
+  },
 };
