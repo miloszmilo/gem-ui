@@ -4,9 +4,10 @@ import Xsvg from "../atoms/Xsvg";
 
 type Props = {
   defaultState?: boolean;
+  children?: React.ReactNode;
 };
 
-export default function Checkbox({ defaultState = false }: Props) {
+export default function Checkbox({ defaultState = false, children }: Props) {
   const [isChecked, setIsChecked] = useState<boolean>(defaultState);
   return (
     <div className="flex flex-row justify-items-center items-center gap-2 [-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,0.6) 30%, #000 50%, rgba(0,0,0,0.6) 70%);-webkit-mask-size: 200%;] animate-shine">
@@ -18,7 +19,7 @@ min-h-fit cursor-pointer relative`}
       >
         <Xsvg isChecked={isChecked} />
       </motion.div>
-      <span className="text-4xl">Checkbox</span>
+      <span className="text-4xl">{children}</span>
     </div>
   );
 }

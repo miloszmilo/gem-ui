@@ -13,11 +13,13 @@ type Story = StoryObj<typeof meta>;
 export const On: Story = {
   args: {
     defaultState: true,
+    children: "On",
   },
 };
 
 export const Off: Story = {
   args: {
     defaultState: false,
+    children: "Off",
   },
 };
