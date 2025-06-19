@@ -15,9 +15,9 @@ export default function Accordion({
 }: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(defaultState);
   return (
-    <div className="flex flex-col w-[40ch] rounded-md bg-neutral-800">
-      <div className="flex flex-row gap-2 p-2 border-b-neutral-900 border-b-1">
-        <span className="w-full text-xl">{heading}</span>
+    <div className="flex flex-col w-[40ch] rounded-md bg-neutral-200">
+      <div className="flex flex-row gap-2 p-2 border-b-neutral-100 border-b-1">
+        <span className="w-full text-xl dark:text-white">{heading}</span>
         <button
           className={`cursor-pointer ${isOpen ? "rotate-90" : ""} duration-100`}
           onClick={() => setIsOpen(!isOpen)}

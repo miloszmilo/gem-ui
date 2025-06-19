@@ -1,5 +1,6 @@
 import "./App.css";
 import Accordion from "./components/atoms/Accordion";
+import Breadcrumbs from "./components/atoms/Breadcrumbs";
 import Carousel from "./components/atoms/Carousel";
 import MinMaxSlider from "./components/atoms/MinMaxSlider";
 import Select from "./components/atoms/Select";
@@ -28,12 +29,16 @@ export default function App() {
             "../../../public/images/toa-heftiba-JTWOWjraDUE-unsplash.jpg",
           ]}
         />
-        <Accordion>
+        <Accordion heading="Heading">
           Big Reveal of an accordion. An accordion lets you hide text that you
           don't want your users to have open all the time, as it takes too much
           space. However you don't want to remove it completely either because
           it can be useful for certain people.
         </Accordion>
+        <Breadcrumbs
+          crumbs={["home", "src", "components", "atoms"]}
+          separator={">"}
+        />
       </main>
       <footer></footer>
     </body>
